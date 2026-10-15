@@ -10,7 +10,7 @@ public class Client {
 
         boolean running = true;
         System.out.println("==================================================");
-        System.out.println(" Welcome to Domain 8: Flight Reservation System ");
+        System.out.println(" Flight Reservation System ");
         System.out.println("==================================================");
 
         while (running) {
@@ -57,10 +57,10 @@ public class Client {
                 adminFacade.inspectSystemState(id);
 
             } else if (choice.equals("3")) {
-                System.out.print("Enter Booking/Ticket ID for manual rollback/cancellation: ");
-                String id = scanner.nextLine();
+                System.out.print("Enter seat ID for manual rollback/cancellation: ");
+                String seatId = scanner.nextLine();
                 
-                System.out.println("Manual rollback option selected for ID: " + id);
+                adminFacade.forceManualRollback(seatId);
 
             } else if (choice.equals("4")) {
                 running = false;
